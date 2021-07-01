@@ -13,12 +13,6 @@ pipeline {
       }
     }
 
-    stage('artifacts') {
-      steps {
-        archiveArtifacts './war'
-      }
-    }
-
     stage('dockerbuild') {
       steps {
         sh '''echo "from centos" > Dockerfile
